@@ -1,0 +1,1 @@
+evaluation/results/v0-종합.md 을 읽고, resources/행동계획-코치-v0.md 를 개선해서 v1 문서를 같은 위치에 생성하라.
