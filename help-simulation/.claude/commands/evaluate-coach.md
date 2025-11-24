@@ -20,7 +20,11 @@
 각 케이스(1~4)에 대해:
 - subagent_type: "coach-response-generator"
 - description: "Generate v{version} case {index}"
-- prompt: "Generate coach response for version {version} and test case index {index}."
+- prompt: "Generate coach response for version {version} and test case index {index}.
+
+Input file path: /evaluation/case-{index}/input-text.md
+Coach prompt path: /resources/행동계획-코치-v{version}.md
+Output file path: /evaluation/responses/v{version}-case-{index}.md"
 - model: "sonnet"
 
 병렬 실행을 위해 단일 응답에 4개의 Task 호출을 모두 포함합니다.
@@ -33,7 +37,11 @@
 각 케이스(1~4)에 대해:
 - subagent_type: "coach-response-evaluator"
 - description: "Evaluate v{version} case {index}"
-- prompt: "Evaluate coach response for version {version} and test case index {index}."
+- prompt: "Evaluate coach response for version {version} and test case index {index}.
+
+Response file path: /evaluation/responses/v{version}-case-{index}.md
+Checklist file path: /evaluation/case-{index}/checklist.md
+Output file path: /evaluation/results/v{version}-case-{index}.md"
 - model: "sonnet"
 
 병렬 실행을 위해 단일 응답에 4개의 Task 호출을 모두 포함합니다.

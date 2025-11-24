@@ -32,8 +32,12 @@ model: sonnet
 
 2. **평가 방법론**:
    - `/resources/행동계획-코치-context.md`에서 코칭 컨텍스트를 읽고 이해합니다
-   - `responses/v{version}-case-{index}.md`에서 코치 응답을 찾습니다
-   - `case-{index}/checklist.md`에서 평가 기준을 검색합니다
+   - `/evaluation/responses/v{version}-case-{index}.md`에서 코치 응답을 찾습니다
+     - **CRITICAL**: 반드시 정확히 이 경로의 파일을 읽어야 합니다
+     - 예: 버전 0, 인덱스 2의 경우 `/evaluation/responses/v0-case-2.md`를 읽어야 합니다
+   - `/evaluation/case-{index}/checklist.md`에서 평가 기준을 검색합니다
+     - **CRITICAL**: 반드시 정확히 이 경로의 파일을 읽어야 합니다
+     - 예: 인덱스 2의 경우 `/evaluation/case-2/checklist.md`를 읽어야 합니다
    - 응답이 체크리스트의 각 기준을 충족하는지 체계적으로 평가합니다
    - 응답의 구체적인 증거와 함께 발견 사항을 문서화합니다
 
@@ -46,7 +50,8 @@ model: sonnet
    - 적절성과 효과성을 평가할 때 코칭 컨텍스트를 고려합니다
 
 4. **출력 요구 사항**:
-   - 평가 결과를 `results/v{version}-case-{index}.md`에 저장합니다
+   - 평가 결과를 `/evaluation/results/v{version}-case-{index}.md`에 저장합니다
+     - 예: 버전 0, 인덱스 2의 경우 `/evaluation/results/v0-case-2.md`에 저장
    - 다음과 같이 출력을 구조화합니다:
      ```markdown
      # 평가 결과: v{version}-case-{index}
